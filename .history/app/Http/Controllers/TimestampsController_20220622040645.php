@@ -24,6 +24,10 @@ class TimestampsController extends Controller
     {
         $user = Auth::user();
 
+        /**
+         * 打刻は1日一回までにしたい 
+         * DB
+         */
         $oldTimestamp = Timestamp::where('user_id', $user->id)->latest()->first();
         if ($oldTimestamp) {
             $oldTimestampPunchIn = new Carbon($oldTimestamp->punchIn);
