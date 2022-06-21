@@ -22,6 +22,7 @@ class CreateAttendacesTable extends Migration
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();
             $table->time('date')->nullable();
+            $table->rememberToken();
         });
     }
 

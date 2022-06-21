@@ -36,14 +36,14 @@
       <form action="{{ route('timestamp/punchin') }}" method="POST">
           @csrf
           @method('POST')
-        <button type="submit" id="buttonA" onclick="getElementById('buttonB').disabled = true;"  class="btn btn-primary">出勤開始</button>
+        <button type="submit" id="button1" onclick="func1()" class="btn btn-primary">出勤開始</button>
       </form>
     </td>
     <td>
       <form action="{{ route('timestamp/punchout') }}" method="POST">
           @csrf
           @method('POST')
-        <button type="submit" id="buttonB" onclick="getElementById('buttonA').disabled = false;" class="btn btn-primary">出勤開始</button>
+        <button type="submit" id="button2" onclick="func2()" class="btn btn-primary">出勤開始</button>
       </form>
     </td>
   </tr>
@@ -60,7 +60,27 @@
 </table>
 
 
+                                <form action="{{ route('timestamp/punchin') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <button type="submit" id="button1" onclick="func1()" class="btn btn-primary">出勤</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{{ route('timestamp/punchout') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <button type="submit" id="button2" onclick="func2()" class="btn btn-success">退勤</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
 

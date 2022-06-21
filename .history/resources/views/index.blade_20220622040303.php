@@ -36,7 +36,7 @@
       <form action="{{ route('timestamp/punchin') }}" method="POST">
           @csrf
           @method('POST')
-        <button type="submit" id="buttonA" onclick="getElementById('buttonB').disabled = true;"  class="btn btn-primary">出勤開始</button>
+        <button type="submit" id="buttonA" onclick="disabled = true;"  class="btn btn-primary">出勤開始</button>
       </form>
     </td>
     <td>
