@@ -20,6 +20,8 @@ class CreateTimestampsTable extends Migration
             $table->dateTime('punchOut')->nullable();
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users');
+
         });
 
     }

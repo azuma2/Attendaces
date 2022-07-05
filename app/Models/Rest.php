@@ -4,29 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Attendace;
+use App\Models\User;
 
 class Rest extends Model
 {
     use HasFactory;
 
-    
-    protected $fillable = [
-        'attendace_id',
-        'created_at',
-        'updated_at',
-        'start_time',
-        'end_time',
-        'date',
-    ];
+    protected $fillable = ['user_id', 'restIn', 'restOut'];
 
-    
-    public static $rules = array(
-        'attendace_id' => 'required',
-    );
+    protected $table = 'rest';
 
-    public function attendace(){ 
-        return $this->belongsTo(Attendace::class);
+    public function user()
+    {
+        $this->belongsTo(User::class);
     }
 
 }
