@@ -1,0 +1,70 @@
+body {
+  background: #EEEEEE;
+}
+
+.card {
+  margin-left: 10%;
+}
+
+
+
+table{
+    border-collapse: separate;
+    border-spacing: 40px 10px;
+    justify-content: center;
+    border-top: solid 1px gray;
+
+}
+
+
+svg.w-5.h-5 {
+  /*paginateメソッドの矢印の大きさ調整のために追加*/
+  width: 30px;
+  height: 30px;
+}
+
+.button1{
+  border: none;
+  background: transparent;
+}
+
+td {
+  padding: 5px 10px;
+  text-align: center;
+
+}
+
+tr{
+  border-bottom: solid 1px gray;
+}
+
+.narabe {
+  padding: 20px;
+  margin-left: 100px;
+}
+
+
+.th {
+  border-bottom: solid;
+  border-bottom: solid 1px gray;
+}
+
+table td {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table td:hover {
+  white-space: normal;
+}
+
+.calendar{
+  font-size: 30px;
+  margin-left: 15%;
+  padding: 5px;
+  border-collapse: separate;
+  border-spacing: 8px 10px;
+  
+}

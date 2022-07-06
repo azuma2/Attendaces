@@ -1,17 +1,5 @@
-@extends('layouts.default')
 
-<style>
-  .button1{
-  border: none;
-    background: transparent;
-}
-
-.button2{
-
-  border: none;
-    background: transparent;
-}
-</style>
+@extends('layouts.common-main')
 @section('title', 'index.blade.php')
 
 @section('css')
@@ -20,22 +8,15 @@
 
 
 @section('content')
+
+<div class="card"> 
 @if (Auth::check())
-<p>{{ Auth::user()->name}}さんお疲れ様です</p>
+<h1 class="index-title">{{ Auth::user()->name}}さんお疲れ様です</h1>
 @else
 <p>ログインしていません。（<a href="/login">ログイン</a>｜
   <a href="/register">登録</a>）</p>
 @endif
-<table>
-  <tr>
-    <a href="/login">ログイン</a>
-    <a href="/infomation">ログイン</a>
-    <form action="move" method="POST">
-  @csrf
-  <input type="hidden" name="input" value="{{ \Carbon\Carbon::today() }}">
-  <input type="submit" value="見つける">
-</form>
-  </tr>
+<table >
   
   <tr>
     <td>
@@ -70,6 +51,6 @@
     </td>
   </tr>
 </table>
-
-
+</div>
+<div class="push"></div>
 @endsection

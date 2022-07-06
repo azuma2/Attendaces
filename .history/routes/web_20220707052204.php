@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\WorkController;
+use App\Http\Controllers\TimestampsController;
+use App\Http\Controllers\RestController;
+
+Route::get('/', [WorkController::class, 'index']);
+
+Route::get('/verror', [RegisteredUserController::class, 'verror']);
+
+Route::get('/home', [AuthorController::class, 'index2'])->middleware('auth');
+
+require __DIR__.'/auth.php';
+
+
+Route::get('/', function () {
+    return view('index');
+})->middleware('auth');
+
+
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', [WorkController::class, 'index']);
+    Route::get('/infomation', [WorkController::class, 'infomation']);
+    Route::get('/serch', [WorkController::class, 'serch']);
+    Route::get('/move', [WorkController::class, 'move'])->name('move');
+    Route::get('/restbind/{rest}', [WorkController::class, 'bind']);
+});
+
+Route::group(['middleware' => 'auth'], function() {
+Route::post('/punchin', [TimestampsController::class, 'punchIn'])->name('timestamp/punchin');
+Route::post('/punchout', [TimestampsController::class, 'punchOut'])->name('timestamp/punchout');
+});
+
+Route::group(['middleware' => 'auth'], function() {
+Route::post('/restin', [RestController::class, 'restIn'])->name('rest/restin');
+Route::post('/restout', [RestController::class, 'restOut'])->name('rest/restout');
+});

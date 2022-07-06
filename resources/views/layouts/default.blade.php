@@ -7,10 +7,6 @@
     @yield('css')
 
     <style>
-    body {
-      font-size:16px;
-      margin: 5px;
-    }
     h1 {
       font-size:60px;
       color:white;

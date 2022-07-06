@@ -1,17 +1,36 @@
+body {
+  background: #EEEEEE;
+}
+
+.card {
+  margin-left: 10%;
+}
+
+.index-title{
+  margin-left: 30%;
+  margin-top: 20px;
+  font-size: large;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing:50px 40px;
+    justify-content: center;
+}
+
 th {
   background-color: #289ADC;
   color: white;
   padding: 5px 40px;
 }
 
-tr:nth-child(odd) td {
-  background-color: #FFFFFF;
-}
-
 td {
-  padding: 25px 40px;
-  background-color: #EEEEEE;
+  width: 300px;
+    height: 150px;
+  background-color: white;
   text-align: center;
+      border-collapse: separate;
+        border-spacing: 8px 10px;
 }
 
 svg.w-5.h-5 {
@@ -22,12 +41,6 @@ svg.w-5.h-5 {
 
 .button1{
   border: none;
-    background: transparent;
-}
-
-.button2{
-
-  border: none;
-    background: transparent;
+  background: transparent;
 }
 
